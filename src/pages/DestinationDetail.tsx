@@ -1,13 +1,17 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { directions } from '../data/index';
+import { useParams,useLocation  } from "react-router-dom";
+import { IDestination } from '../types/types';
 
 const DestinationDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // Получаем id из параметров маршрута
-  const destination = directions.find(dest => dest.id.toString() === id); // Находим направление по id
+  const location = useLocation();
+  const destinations = location.state?.destinations; // Получаем массив направлений из состояния
+    console.log(destinations);
+    
+  const destination: IDestination | undefined = destinations?.find((dest: { id: { toString: () => string | undefined; }; }) => dest.id.toString() === id);
 
   if (!destination) {
-    return <div>Направление не найдено.</div>; // Обработка случая, если направление не найдено
+    return <div>Направление не найдено.</div>; 
   }
 
   return (

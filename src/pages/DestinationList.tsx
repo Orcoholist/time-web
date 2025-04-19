@@ -7,7 +7,7 @@ const DestinationList: React.FC<DestinationListProps> = ({ destinations }) => {
   const navigate = useNavigate(); 
 
   const handleCardClick = (id: number) => {
-    navigate(`/destination/${id}`); 
+    navigate(`/destination/${id}`, { state: { destinations } });
   };
   return (
     <div className="destination-list">
