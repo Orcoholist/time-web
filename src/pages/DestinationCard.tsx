@@ -1,16 +1,16 @@
 import React from "react";
 import { IDestination } from '../types/types';
-import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
+import { useNavigate } from 'react-router-dom'; 
 
 interface DestinationCardProps {
   destination: IDestination;
 }
 
 const DestinationCard: React.FC<DestinationCardProps> = ({ destination }) => {
-  const navigate = useNavigate(); // Получаем функцию navigate
+  const navigate = useNavigate(); 
 
   const handleCardClick = () => {
-    navigate(`/destination/${destination.id}`); // Перенаправляем на страницу с деталями
+    navigate(`/destination/${destination.id}`); 
   };
 
   return (

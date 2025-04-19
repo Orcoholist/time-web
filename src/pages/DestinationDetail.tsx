@@ -6,7 +6,7 @@ const DestinationDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // Получаем id из параметров маршрута
   const location = useLocation();
   const destinations = location.state?.destinations; // Получаем массив направлений из состояния
-    console.log(destinations);
+ 
     
   const destination: IDestination | undefined = destinations?.find((dest: { id: { toString: () => string | undefined; }; }) => dest.id.toString() === id);
 

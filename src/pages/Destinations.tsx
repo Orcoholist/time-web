@@ -20,7 +20,7 @@ const Destinations: React.FC = () => {
   return (
     <div className="destinations">
     <h1>Наши направления</h1>
-    <div className="header">
+    <div className="destinations-items">
       <button onClick={() => setActiveList("directions")}>Направления</button>
       <button onClick={() => setActiveList("strangeEvents")}>Необычные события</button>
       <button onClick={() => setActiveList("significantDates")}>Знаменательные даты</button>
